@@ -7,11 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="ahh main">
+        <a id="scream" href="index.html">
+            AH</a>
+    </div>
     <style>
         /* i am too lazy to create style file */
-        body {
-            
+        .main {
+            background-color: unset;
+        }
+        .ahh {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: yellow;
+            text-align: center;
         }
     </style>
+    <script>
+        var cool_element = document.getElementById("scream")
+        var rot = 0
+        setInterval(() => {
+            rot += 0.1
+            cool_element.innerHTML += "H"
+            cool_element.style.transform = 'rotate('+rot+'deg)'
+            // cool_element.style.fontSize = '100rem'
+            cool_element.style.fontSize = Math.pow((Math.sin(rot/2) + 1) * 2, 2) + 'rem'
+            if (Math.random() < 0.05) {
+                cool_element.innerHTML += "<br>"
+            }
+        }, 10);
+    </script>
 </body>
 </html>

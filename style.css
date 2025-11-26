@@ -48,4 +48,5 @@ body {
 }
 .main a {
     color: var(--five-o-color);
+    text-decoration: none;
 }
