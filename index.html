@@ -7,10 +7,72 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="fullscreen">
+        <div class="fullscreen_main" id="funnyShit">
+
+        </div>
+        <script>
+            var funny_element = document.getElementById("funnyShit");
+            var funny_element_array = [];
+            function addMORE() {
+                var funny_temp = document.createElement("p")
+                funny_temp.classList.add("funny")
+                funny_element.appendChild(funny_temp)
+                funny_element_array.push(funny_temp)
+            };
+            function removeALL() {
+                funny_element_array.forEach(element => {
+                    element.remove();
+                });
+            };
+            var timer = 0
+            setInterval(function () {
+                timer += 1
+                var temp_iter = 0
+                funny_element_array.forEach(element => {
+                    temp_iter += 1
+                    element.innerHTML = "N0O0B090LV"
+                    element.style.fontSize = Math.sin(timer / 12+ temp_iter / 2) * 10 + 10 + "pt"
+                    element.style.transform = 'rotate('+Math.cos(timer / 16 + temp_iter / 10) * 10+'deg)'
+                });
+            }, 10)
+        </script>
+    </div>
     <div class="main">
         <h1>WELCOME TO</h1>
         <span class="special_1">N00B-o-L1GHT</span>
-        <p>The place to go.. when.. uhh.. see what insane shit noob is cooking aka having light in noobs enternal <a href="darknesss.html">darknessssssssssssssss</p></p>
+        <p>The place to go.. when.. uhh.. see what insane shit noob is cooking aka having light in noobs enternal <a href="darknesss.html">darknessssssssssssssss</a></p></p>
+        <div class="coolShit">
+            <h2>-</h2>
+            <h2>-</h2>
+            <h2>C</h2>
+            <h2>O</h2>
+            <h2>O</h2>
+            <h2>L</h2>
+            <h2>_</h2>
+            <h2>S</h2>
+            <h2>H</h2>
+            <h2>I</h2>
+            <h2>T</h2>
+            <h2>-</h2>
+            <h2>-</h2>
+        </div>
+        <div class="subs">
+            <h3>PROGRAMMING</h3>
+            <p>(I hope i spelled it right XDD)</p>
+            <!-- <div class="panelll">
+                <h4>OH GUESS WHAT</h4>
+                <p>SOME SICK SHITTTS</p>
+                <a href="darknesss.html">YEAH, I'M DIGGING THIS</a>
+                <img src="assets/20250618_233139.jpg" alt="L">
+            </div> -->
+            <h3>ART</h3>
+            <p>(Some of my insanity shit goes right about heerrreeee~~)</p>
+            <h3>MUSIC</h3>
+            <p>(THE SCREAMS OF AGONY FROM MY PC)</p>
+        </div>
+        <button onclick="addMORE()">Le Funny button</button>
+        <button onclick="removeALL()">Le UN-Funny button</button>
     </div>
 </body>
 </html>
