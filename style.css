@@ -104,6 +104,9 @@ html {
     transform: skewX(-9deg) translateY(-10px);
     transition: 0.1s;
 }
+.main .subs:hover {
+    transform: skewX(-21deg);
+}
 .main .subs h3 {
     color: var(--five-o-color);
     font-size: 8vw;
@@ -114,7 +117,7 @@ html {
 .main .subs h3:hover {
     color: var(--main-color);
     font-size: 8vw;
-    transform: skewX(-90deg) translateX(-100px);
+    transform: skewX(-70deg) translateX(100px);
     transition: 1s;
 }
 .panelll {
@@ -126,14 +129,19 @@ html {
     align-items: center;
     justify-content: space-around;
     transform: skewX(-10deg);
-    border-radius: 40%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 .panelll * {
-    transition: cubic-bezier(0.1, -10, 0.9, 10) 1s;
+    transition: cubic-bezier(0.1, -1, 0.9, 1) 0.5s;
 }
 .panelll:hover * {
-    transform: translateX(-100px) skewX(-10deg);
-    transition: cubic-bezier(0.1, -10, 0.9, 10) 1s;
+    transform: translateX(-10px) skewX(-10deg);
+    transition: cubic-bezier(0.1, -1, 0.9, 1) 0.5s;
+}
+.panelll *:hover {
+    transform: rotateZ(1deg);
+    transition: 0.1s;
 }
 .panelll h4 {
     color: var(--secondary-color);
@@ -154,18 +162,30 @@ html {
 .taggies {
     margin: 100px 0 0;
     display: grid;
-    width: 100%;
-    transform: skewX(0deg);
+    width: 50%;
+    transform: rotateZ(10deg);
     gap: 10px;
     grid-auto-flow: column;
     justify-content: left;
+    grid-template-rows: 1fr 1fr;
+    cursor: copy;
 }
 .taggies div{
-    width: 200px;
-    height: 50px;
-    transform: skewX(0deg);
+    width: 176px;
+    height: 62px;
+    transform: skewX(-10deg);
     border-radius: 10px;
     border: var(--main-color) solid;
+}
+.taggies a {
+    transform: skewX(-10deg);
+    cursor: crosshair;
+}
+.taggies a img {
+    transform: skewX(0deg);
+    width: 176px;
+    height: 62px;
+    image-rendering: crisp-edges;
 }
 .graphicDesign{
     align-content: center;
