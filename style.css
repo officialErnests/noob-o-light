@@ -19,6 +19,11 @@ body {
 html {
     cursor: progress;
 }
+* {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
 .fullscreen {
     width: 100vw;
     height: 100vh;
@@ -49,21 +54,27 @@ html {
     margin: 0;
 }
 .main {
+    margin-left: 300px;
     background-color: var(--padding-color);
     width: 80%;
     min-height: calc(100vh - 20px);
     display: flex;
-    padding: 10px;
+    padding: 10px 10px 200px 10px;
     flex-direction: column;
     align-items: center;
     transform: skewx(calc(10deg));
 }
 .main * {
     transform: skewx(calc(-20deg));
+    transition: 0.1s;
+}
+.main *:hover {
+    transform: rotateZ(1deg);
+    transition: 0.1s;
 }
 .main h1 {
     color: var(--primary-color);
-    font-size: 10vw;
+    font-size: 9vw;
 }
 .main p {
     color: var(--trigluray-color);
@@ -71,7 +82,7 @@ html {
     width: 50%;
 }
 .special_1 {
-    font-size: 10vw;
+    font-size: 8vw;
     font-weight: 900;
     color: var(--main-color);
     transform: skewX(-10deg);
@@ -91,7 +102,7 @@ html {
 }
 .main .coolShit h2:hover{
     transform: skewX(-9deg) translateY(-10px);
-    transition: 1s;
+    transition: 0.1s;
 }
 .main .subs h3 {
     color: var(--five-o-color);
@@ -108,21 +119,21 @@ html {
 }
 .panelll {
     background-color: var(--background-color);
-    border: 10px white groove;
+    border: 10px white dotted;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     transform: skewX(-10deg);
-    border-radius: 100%;
+    border-radius: 40%;
 }
 .panelll * {
-    transition: cubic-bezier(0, -10, 1, 10) 1s;
+    transition: cubic-bezier(0.1, -10, 0.9, 10) 1s;
 }
 .panelll:hover * {
-    transform: translateX(-100px);
-    transition: cubic-bezier(0, -10, 1, 10) 1s;
+    transform: translateX(-100px) skewX(-10deg);
+    transition: cubic-bezier(0.1, -10, 0.9, 10) 1s;
 }
 .panelll h4 {
     color: var(--secondary-color);
@@ -133,4 +144,44 @@ html {
     width: 20vw;
     transform: skewX(30deg);
 
+}
+.backRight {
+    transform: skewX(0deg);
+}
+.backRight *{
+    transform: skewX(0deg);
+}
+.taggies {
+    margin: 100px 0 0;
+    display: grid;
+    width: 100%;
+    transform: skewX(0deg);
+    gap: 10px;
+    grid-auto-flow: column;
+    justify-content: left;
+}
+.taggies div{
+    width: 200px;
+    height: 50px;
+    transform: skewX(0deg);
+    border-radius: 10px;
+    border: var(--main-color) solid;
+}
+.graphicDesign{
+    align-content: center;
+    text-align: center;
+    color: var(--five-o-color);
+    text-shadow: -1px -1px var(--trigluray-color);
+    background: linear-gradient(in hsl longer hue 45deg, red 0 100%);
+}
+.nuhuhAI {
+    align-content: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+.xxdd {
+    width: 50px;
+    height: 50px;
+    transform: skewX(30deg);
 }
