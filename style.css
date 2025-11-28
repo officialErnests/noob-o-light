@@ -120,6 +120,10 @@ html {
     transform: skewX(-70deg) translateX(100px);
     transition: 1s;
 }
+.main .subs > img {
+    width: 50vh;
+    transform: skewX(10deg);
+}
 .panelll {
     background-color: var(--background-color);
     border: 10px white dotted;
