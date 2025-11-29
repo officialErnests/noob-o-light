@@ -49,6 +49,22 @@ html {
     left: 0; 
     pointer-events: none;
 }
+.joysticc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 20px);
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+.joysticc button {
+    width: 100px;
+    height: 100px;
+    pointer-events:all;
+    cursor: move ;
+}
 .fullscreen_main {
     width: 100%;
     height: 100%;
@@ -205,6 +221,9 @@ html {
     transform: skewX(0deg);
 }
 .backRight *{
+    transform: skewX(0deg);
+}
+.backRight:hover {
     transform: skewX(0deg);
 }
 .taggies {

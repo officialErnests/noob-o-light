@@ -9,15 +9,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <meta name="viewport" content="minimum-scale=1">
 </head>
 <body id="boddd">
     <div class="firstTime">
         <a href="#MAINOFALLL">Firs time? click this :DD</a>
     </div>
     <div class="fullscreen">
-        <a href="#MAINOFALLL" style="pointer-events:all;">Back to start ;DD</a>
+        <script>
+            var cursor_x = 0
+            var cursor_x = 0
+            var time_held = 4
+            function movee() {
+                time_held += 10
+            }
+        </script>
+        <a href="#MAINOFALLL" style="pointer-events:all; position: absolute;">Back to start ;DD</a>
+        <div class="joysticc">
+            <button onclick="movee()" id="joysticcc">
+                MOVE <br>
+                THINGY
+            </button>
+        </div>
         <div class="fullscreen_main" id="funnyShit">
-
         </div>
         <script>
             var funny_element = document.getElementById("funnyShit");
@@ -34,6 +48,7 @@
                 });
             };
             var timer = 0
+            var mover = false
             setInterval(function () {
                 timer += 1
                 var temp_iter = 0
@@ -43,9 +58,24 @@
                     element.style.fontSize = Math.sin(timer / 12+ temp_iter / 2) * 10 + 10 + "pt"
                     element.style.transform = 'rotate('+Math.cos(timer / 16 + temp_iter / 10) * 10+'deg)'
                 });
+                if (mover) {
+                    scrollBy(cursor_x * time_held, cursor_y * time_held)
+                }
             }, 10)
+            var box = document.getElementById("joysticcc")
+            box.addEventListener("mousemove", (event) => {
+                var bounding_box = box.getBoundingClientRect()
+                cursor_x = (event.pageX - bounding_box.left - scrollX) / 50 - 1;
+                cursor_y = (event.pageY - bounding_box.top - scrollY) / 50 - 1;
+                cursor_x = (cursor_x < -0.01)? -Math.sqrt(-cursor_x) : (cursor_x < 0.01)? 0 : Math.sqrt(cursor_x)
+                cursor_y = (cursor_y < -0.01)? -Math.sqrt(-cursor_y) : (cursor_y < 0.01)? 0 : Math.sqrt(cursor_y)
+                console.log(cursor_x)
+            });
+            box.addEventListener("mouseenter", () => {mover = true});
+            box.addEventListener("mouseleave", () => {mover = false; time_held = 4});
         </script>
     </div>
+    
     <div class="main" id="MAINOFALLL">
         <h1>WELCOME TO</h1>
         <span class="special_1">N00B-o-L1GHT</span>
@@ -221,7 +251,7 @@
                 <p>Also in the next page to not load so many audio files into one page XXDD</p><a href="MMMUSIC.html">//MU--S--IC\\</a>
             </div>
         </div>
-        <div class="backRight">
+        <div class="backRight"> 
             <p>If you need to reach me.. uhh.. discord server that i will probably make :DD <a href="https://discord.gg/MztTpXQWmj">>>D15C0RD_53RV3R<<</a></p>
             <p>For those lost souls intrested in my games be sure to check out what type of shitshow my github is (leave a star or two make EM RAIN) also don't check the commits as half of time they are boring since locked in half insanity since insanity <a href="https://github.com/officialErnests">>>G1THUB_ACC<<</a></p>
             <p>For those "visual learners" i also have yt account where i post monhtly and mainly big projects + cringe 999% ;)) <a href="https://www.youtube.com/@n0o0b090lv">>>Y0UTUBE_S#1TS#0W<<</a></p>
