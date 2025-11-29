@@ -15,6 +15,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
 }
 html {
     cursor: progress;
@@ -54,15 +55,16 @@ html {
     margin: 0;
 }
 .main {
-    margin-left: 2000px;
     background-color: var(--padding-color);
-    width: 80%;
+    width: 100vw;
+    /* height: 20000px; */
+    position: static;
     min-height: calc(100vh - 20px);
     display: flex;
     padding: 10px 10px 200px 10px;
     flex-direction: column;
     align-items: center;
-    transform: skewx(calc(10deg));
+    transform: skewx(calc(10deg)) translateX(100%);
 }
 .main * {
     transform: skewx(calc(-20deg));
@@ -222,4 +224,12 @@ html {
     width: 50px;
     height: 50px;
     transform: skewX(30deg);
+}
+.shoutouts a {
+    font-size: 3vw;
+}
+.shoutouts {
+    transform: skewX(0deg);
+    display: flex;
+    flex-direction: column;
 }
