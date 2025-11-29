@@ -11,13 +11,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <div class="firstTime">
         <a href="#MAINOFALLL">Firs time? click this :DD</a>
     </div>
     <div class="fullscreen">
-        <a href="#MAINOFALLL" style="pointer-events:all;">Back to start ;DD</a>
+        <script>
+            var cursor_x = 0
+            var cursor_x = 0
+            var time_held = 4
+            function movee() {
+                time_held += 10
+            }
+        </script>
+        <a href="#MAINOFALLL" style="pointer-events:all; position: absolute;">Back to start ;DD</a>
+        <div class="joysticc">
+            <button onclick="movee()" id="joysticcc">
+                MOVE <br>
+                THINGY
+            </button>
+        </div>
+        <div class="fullscreen_main" id="funnyShit">
+        </div>
+        <script>
+            var funny_element = document.getElementById("funnyShit");
+            var funny_element_array = [];
+            function addMORE() {
+                var funny_temp = document.createElement("p")
+                funny_temp.classList.add("funny")
+                funny_element.appendChild(funny_temp)
+                funny_element_array.push(funny_temp)
+            };
+            function removeALL() {
+                funny_element_array.forEach(element => {
+                    element.remove();
+                });
+            };
+            var timer = 0
+            var mover = false
+            setInterval(function () {
+                timer += 1
+                var temp_iter = 0
+                funny_element_array.forEach(element => {
+                    temp_iter += 1
+                    element.innerHTML = "N0O0B090LV"
+                    element.style.fontSize = Math.sin(timer / 12+ temp_iter / 2) * 10 + 10 + "pt"
+                    element.style.transform = 'rotate('+Math.cos(timer / 16 + temp_iter / 10) * 10+'deg)'
+                });
+                if (mover) {
+                    scrollBy(cursor_x * time_held, cursor_y * time_held)
+                }
+            }, 10)
+            var box = document.getElementById("joysticcc")
+            box.addEventListener("mousemove", (event) => {
+                var bounding_box = box.getBoundingClientRect()
+                cursor_x = (event.pageX - bounding_box.left - scrollX) / 50 - 1;
+                cursor_y = (event.pageY - bounding_box.top - scrollY) / 50 - 1;
+                cursor_x = (cursor_x < -0.01)? -Math.sqrt(-cursor_x) : (cursor_x < 0.01)? 0 : Math.sqrt(cursor_x)
+                cursor_y = (cursor_y < -0.01)? -Math.sqrt(-cursor_y) : (cursor_y < 0.01)? 0 : Math.sqrt(cursor_y)
+                console.log(cursor_x)
+            });
+            box.addEventListener("mouseenter", () => {mover = true});
+            box.addEventListener("mouseleave", () => {mover = false; time_held = 4});
+        </script>
     </div>
+
+
     <div class="main"  id="MAINOFALLL">
         <div style="width: 100vw;"></div>
         <h1 class="special_1">I LOVE MUSIC</h1>
@@ -97,8 +155,6 @@
                     </audio>
                 </span>
             </div>
-        </div>
-        <div class="subs">
             <div class="panelll">
                 <h4>ST4YLost</h4>
                 <p>Here i had so much fun playing around so much ;))</p>
@@ -173,8 +229,6 @@
                     </audio>
                 </span>
             </div>
-        </div>
-        <div class="subs">
             <div class="panelll">
                 <h4>N3Wera</h4>
                 <p>At this point i have learned pretty much all i needed to know in lmms :>></p>
@@ -263,8 +317,6 @@
                     </audio>
                 </span>
             </div>
-        </div>
-        <div class="subs">
             <div class="panelll">
                 <h4>CRA2Y</h4>
                 <p>Simple music just there to practices ;PP (also yes i did export everything in wav as i didn't know better :sob: also the music in general dosn't sound good for some [YES I AM LOOKING AT YOU SELECTED_3.wav >:((])</p>
@@ -325,8 +377,6 @@
                     </audio>
                 </span>
             </div>
-        </div>
-        <div class="subs">
             <div class="panelll">
                 <h4>MUS1C</h4>
                 <p>The very beggining of my thrilling carrier :))</p>
@@ -443,6 +493,22 @@
                 <a href="https://music.youtube.com/watch?v=j_tCdU8CiYo&si=Uwr_UORnXmC6q7Z2"> - PAST MISTAKES - </a>
                 <a href="https://music.youtube.com/watch?v=yfV2eU-TbVc&si=e-0WvunB6zgGnwGk"> - PULL UP - </a>
             </div>
+        </div>
+        <div class="taggies">
+            <!-- <div class="graphicDesign">
+                GRAPHICS DESIGN IS MY PASSION
+            </div>
+            <div class="nuhuhAI">
+                NOT BY AI XDD
+            </div> -->
+            <a href="http://vvqb.dev/friends"><img src="assets/88x31/vivi88x31.gif" alt=""></a>
+            <a href="https://valen.zip"><img src="https://www.valen.zip/button-win98.gif" alt=""></a>
+            <a href="https://tarfish.github.io"><img src="assets/88x31/sarvesh-button.png" alt=""></a>
+            <a href="https://nooblv.wip"><img src="assets/88x31/noob88x31.gif" alt=""></a>
+            <a href="https://gideon.sh"><img src="assets/88x31/neocat.gif" alt=""></a>
+            <a href="codingcorner.dev"><img src="https://codingcorner.dev/buttons/codingcorner.png" alt=""></a>
+            <a href="https://bomberfish.ca "><img src="assets/88x31/button.gif" alt=""></a>
+            <a href="https://aconlin.com"><img src="assets/88x31/acon-gets-a-button-animated.gif" alt=""></a>
         </div>
     </div>
 </body>
