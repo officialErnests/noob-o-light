@@ -229,13 +229,14 @@ html {
 .taggies {
     margin: 100px 0 0;
     display: grid;
-    width: 50%;
-    transform: rotateZ(0);
-    gap: 20px;
+    transform: skewX(-5deg);
+    gap: 5px;
     grid-auto-flow: column;
     justify-content: left;
     grid-template-rows: 1fr 1fr;
     cursor: copy;
+    background-color: black;
+    padding: 50px;
 }
 .taggies div{
     width: 176px;
@@ -245,8 +246,10 @@ html {
     transform:  skewX(-5deg);
 }
 .taggies a {
-    transform:  skewX(-5deg);
+    transform:  skewX(0deg);
     cursor: crosshair;
+    width: 176px;
+    height: 62px;
 }
 .taggies a img {
     transform: skewX(0deg);
