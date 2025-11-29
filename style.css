@@ -183,7 +183,9 @@ html {
 .panelll img {
     width: 20vw;
     transform: skewX(30deg);
-
+}
+.panelll a {
+    font-size: 5rem;
 }
 .rating {
     display: flex;
