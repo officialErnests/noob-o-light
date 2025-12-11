@@ -16,11 +16,26 @@
         <a href="#MAINOFALLL">Firs time? click this :DD</a>
     </div>
     <div class="fullscreen">
+        <div class="intro" id="introoo">
+            Fore begginers on top right there is movement thingy :DD <br>
+            (click it to change speed and continue)
+        </div>
+        <img class="intro" src="https://i.pinimg.com/originals/5d/9e/c1/5d9ec130d94ccf8b96c883fae2e3f4ce.gif" alt="BOOOM" id="EXPO" style="display: none;">
         <script>
             var cursor_x = 0
             var cursor_x = 0
+            var first_time = true
+            var fade_out = -120
             var time_held = 4
+            var cool_explosion = new Audio('roblox-bomb-explosion.mp3')
+            var introooo = document.getElementById("introoo")
+            var once = true
             function movee() {
+                if  (first_time) {
+                    first_time = false
+                    fade_out = 60*10
+                    introooo.innerHTML = "Try finding<br>--> music page <-- <br>--> art page <--<br> Gl and have fun :DD"
+                }
                 time_held += 10
             }
         </script>
@@ -35,6 +50,7 @@
         </div>
         <script>
             var funny_element = document.getElementById("funnyShit");
+            var explosion = document.getElementById("EXPO")
             var funny_element_array = [];
             function addMORE() {
                 var funny_temp = document.createElement("p")
@@ -50,6 +66,23 @@
             var timer = 0
             var mover = false
             setInterval(function () {
+                if (fade_out > -120) {
+                    fade_out -= 1                    
+                    introooo.innerHTML = "Try finding<br>--> music page <-- <br>--> art page <--<br> Gl and have fun :DD<br> SELF DESTRUCT ETA-" + String(Math.round(fade_out / 60))
+                    introooo.style.backgroundColor = "rgba(0, 0, 0, "+ String(fade_out / (60 * 10) * 0.9) +")"
+                    if (fade_out <= -120) {
+                        EXPO.style.display = "none"
+                    } else if (fade_out <= 0) {
+                        EXPO.style.display = "block"
+                        introooo.style.display = "none"
+                    }
+                    else if (fade_out <= 20) {
+                        if (once){
+                            once = false
+                            cool_explosion.play()
+                        }
+                    }
+                }
                 timer += 1
                 var temp_iter = 0
                 funny_element_array.forEach(element => {
