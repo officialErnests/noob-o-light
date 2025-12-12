@@ -100,7 +100,7 @@ html {
 .main {
     margin-left: calc(100vw);
     background-color: var(--padding-color);
-    width: 1500px;
+    width: 100vw;
     /* height: 20000px; */
     position: static;
     min-height: calc(100vh - 20px);

@@ -12,18 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body id="boddd">
-    <div class="firstTime">
+    <div class="firstTime" id="firstT">
         <a href="#MAINOFALLL">Firs time? click this :DD</a>
     </div>
-    <script>
-        function fixxxxMain() {
-            var elementos = document.getElementsByTagName("*")
-            for (const element of elementos) {
-                element.style.transform = "skew(0)"
-            }
-        }
-    </script>
-    <div class="fullscreen">
+    <div class="fullscreen" id="fullscreen">
         <button onclick="fixxxxMain()" style="pointer-events:all; position: absolute; top: 0; left: 50%;">B()RING MODE (now you get evrything witouth skew :sob:)</button>
         <div class="intro" id="introoo">
             Fore begginers on top right there is movement thingy :DD <br>
@@ -116,12 +108,24 @@
                 cursor_y = (event.pageY - bounding_box.top - scrollY) / 50 - 1;
                 cursor_x = (cursor_x < -0.01)? -Math.sqrt(-cursor_x) : (cursor_x < 0.01)? 0 : Math.sqrt(cursor_x)
                 cursor_y = (cursor_y < -0.01)? -Math.sqrt(-cursor_y) : (cursor_y < 0.01)? 0 : Math.sqrt(cursor_y)
-                console.log(cursor_x)
             });
             box.addEventListener("mouseenter", () => {mover = true});
             box.addEventListener("mouseleave", () => {mover = false; time_held = 4});
         </script>
     </div>
+    <script>
+        function fixxxxMain() {
+            document.getElementById("firstT").remove()
+            document.getElementById("fullscreen").remove()
+            document.getElementById("boddd").style.overflowX = "hidden"
+            var elementos = document.getElementsByTagName("*")
+
+            for (const element of elementos) {
+                element.style.transform = "skew(0)"
+            }
+            document.getElementById("MAINOFALLL").style.transform = "translateX(-100vw)"
+        }
+    </script>
     
     <div class="main" id="MAINOFALLL">
         <h1>WELCOME TO</h1>
